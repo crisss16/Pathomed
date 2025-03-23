@@ -1,0 +1,112 @@
+/* Navbar general */
+.navbar {
+    background: linear-gradient(135deg, #1a237e, #0d47a1);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    width: 100%;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Brand-ul */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(109, 10, 109);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    flex-grow: 1;
+
+}
+
+/* Meniul principal */
+.menuHideed {
+    display: flex;
+    gap: 1.5rem;
+    background: white;
+    padding: 0.5rem 1 rem;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.menuHideed .nav-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(109, 10, 109);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    display: block;
+}
+
+.menuHideed .nav-link:hover {
+    background: #4da3ff;
+    color: white;
+}
+
+.btn-programare {
+    background: #ff4081;
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    transition: all 0.3s;
+}
+
+.btn-programare:hover {
+    background: #d81b60;
+}
+
+/* Burger menu pentru mobil */
+.burger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    background: white;
+    border-radius: 12px;
+    padding: 8px 12px;
+}
+
+.burger div {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Responsivitate */
+@media (max-width: 992px) {
+    .burger {
+        display: block;
+    }
+
+    .menuHideed {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background: white;
+        width: 90%;
+        max-width: 300px;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .menuHideed.active {
+        display: flex;
+    }
+}
