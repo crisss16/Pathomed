@@ -19,7 +19,7 @@ const AppointmentsForm = () => {
     };
 
     try {
-        const response = await fetch('http://localhost/your-php-endpoint.php', {
+        const response = await fetch('http://localhost:3001/programare', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
