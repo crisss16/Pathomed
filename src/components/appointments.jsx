@@ -1,5 +1,8 @@
 import  {useState} from 'react';
 import './appointments.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const AppointmentsForm = () => {
     const [name, setName] = useState('');
@@ -29,17 +32,18 @@ const AppointmentsForm = () => {
 
         const result = await response.json();
         if (result.success) {
-            alert('Programarea a fost realizata cu succes!');
+            toast.success('Programarea a fost salvată cu succes!');
             setName('');
             setEmail('');
             setPhone('');
             setAppointmentDate('');
         } else {
-            alert('Eroare la procesarea programarii.');
+            toast.error('Data și ora sunt deja ocupate. Vă rugăm să alegeți o dată și o oră disponibile! Mulțumim!');
+            
         }
     } catch (error) {
         console.error('Eroare:', error);
-        alert('Eroare la conectarea cu serverul.');
+        toast.error(DataTransfer.mesaj || 'A aparut o eroare!');
     }
  };
 
@@ -94,6 +98,10 @@ const AppointmentsForm = () => {
                     onChange={(e) => setPhone(e.target.value)}
                     required
                  />
+            </div>
+
+            <div>
+                <ToastContainer />
             </div>
 
             <button type="submit" className="btn btn-primary">Programeaza</button>
