@@ -13,19 +13,13 @@ import { useNavigate } from 'react-router-dom';
  //const Home = () => <h1>Bine ai venit! </h1>;
 
 const App=()=> {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (window.location.pathname !== "/") {
-      navigate("/");
-    }
-  }, []);
   
   return (
     <div id="root">
        <div className="content">
       <Navbar />
       <Header />
+    
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,6 +27,7 @@ const App=()=> {
         <Route path="/despre" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard/:cnp" element={<Dashboard />} />
+        <Route path="/contact" element={<Footer />} />
       </Routes>
     </div>
     <Footer />

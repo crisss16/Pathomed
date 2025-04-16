@@ -1,9 +1,63 @@
 .home-container {
-    font-family: 'Arial', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background: url('../src/assets/background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .page-header {
     text-align: center;
-    padding: 2rem;
-    background: #f5f7fa;
-}
+    max-width: 800px;
+    width: 100%;
+    z-index: 1;
+  }
+  
+
+  .overlay {
+    background-color: rgba(255, 255, 255, 0.85); /* semi-transparent background for readability */
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+  
+  .home-section h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .home-section p {
+    font-size: 1.2rem;
+    color: #34495e;
+  }
+  
+  .login-section h2 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .login-button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #2980b9;
+  }
 
 /* HEADER */
 .hero {

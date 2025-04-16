@@ -24,7 +24,7 @@ const Navbar = () => {
                 <div id="menuHidded" className="menuHideed">
                     <div><Link className="nav-link" to="/" onClick={toggleMenu}>Acasă</Link></div>
                     <div><Link className="nav-link btn-despre" to="/despre" onClick={toggleMenu}>Despre</Link></div>
-                    <div><Link className="nav-link" to="/contact" onClick={toggleMenu}>Contact</Link></div>
+                    <div><Link className="nav-link btn-contact" to="/contact" onClick={toggleMenu}>Contact</Link></div>
                     <div><Link className="nav-link btn-programare" to="/programare" onClick={toggleMenu}>Programează-te!</Link></div>
                 </div>
             </div>
