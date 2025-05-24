@@ -27,7 +27,6 @@ const App=()=> {
         <Route path="/despre" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard/:cnp" element={<Dashboard />} />
-        <Route path="/contact" element={<Footer />} />
       </Routes>
     </div>
     <Footer />

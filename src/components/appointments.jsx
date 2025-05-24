@@ -30,6 +30,13 @@ const AppointmentsForm = () => {
             body: JSON.stringify(appointmentData),
         });
 
+        const contentType = response.headers.get('content-type');
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error('Eroare server: ${response.status} - ${errorText}');
+        }
+
+        if (contentType && contentType.includes('application/json')) {
         const result = await response.json();
         if (result.success) {
             toast.success('Programarea a fost salvată cu succes!');
@@ -38,14 +45,16 @@ const AppointmentsForm = () => {
             setPhone('');
             setAppointmentDate('');
         } else {
-            toast.error('Data și ora sunt deja ocupate. Vă rugăm să alegeți o dată și o oră disponibile! Mulțumim!');
-            
+            toast.error(result.mesaj  || 'Data și ora sunt deja ocupate. Vă rugăm să alegeți o dată și o oră disponibile! Mulțumim!');           
         }
+    } else {
+        throw new Error('Serverul a returnat un răspuns neașteptat.');
+    }
     } catch (error) {
         console.error('Eroare:', error);
-        toast.error(DataTransfer.mesaj || 'A aparut o eroare!');
+        toast.error(error.message || 'A aparut o eroare!');
     }
- };
+    };
 
  return (
     <div className="container">

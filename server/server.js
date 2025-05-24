@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conectare la MongoDB (schimbă cu linkul tău de Atlas dacă e remote)
-mongoose.connect('mongodb+srv://bucatariucristiana:Admin1234@cluster0.a1b3m9h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://bucatariucristiana:Admin1234@cluster0.a1b3m9h.mongodb.net/appointments?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -19,7 +19,7 @@ const Programare = mongoose.model('Programare', {
   name: String,
   email: String,
   phone: String,
-  appointmentDate: String, // sau Date, dacă vrei să-l parsezi
+  appointmentDate: Date, // sau Date, dacă vrei să-l parsezi
 });
 
 // Endpoint de salvare
